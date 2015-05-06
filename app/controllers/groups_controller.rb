@@ -2,12 +2,13 @@ class GroupsController < ApplicationController
 
 
  def index
- 	flash[:notice] = "早安！你好！"
- 	  @groups = Group.all
+ 	 	  @groups = Group.all
   end
 
   def show
   	@group = Group.find(params[:id])
+     @posts = @group.posts
+   
   end
 
   def new
